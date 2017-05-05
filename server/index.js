@@ -22,7 +22,8 @@ app.use(express.static('client'));
 
 app.get('/', function (req, res) {
 
-  res.sendfile('client/cricsim.html');
+  res.sendfile('client/experto.html');
+//  res.sendfile('client/cricsim.html');
 //    res.sendfile('client/merchant.html');
 
 });
@@ -70,19 +71,7 @@ var server = app.listen(3003, function () {
     var host = server.address().address;
     var port = server.address().port;
 
-    for (var i = 0; i < 2; i++) {
-        console.log(randomName());
-        console.log(randomName.first())
-        console.log(randomName.middle())
-        console.log(randomName.last())
+    
 
-        //also, random place name!
-        console.log(randomName.place())
-
-        db.get('random').push(
-          {name:randomName()}
-        );
-    }
-
-    console.log('Hue App listening at http://%s:%s', host, port);
+    console.log('Experto listening at http://%s:%s', host, port);
 });

@@ -3,7 +3,7 @@ myApp.directive('batScorecard', function () {
         restrict: 'E',
         scope: true,
         replace: true,
-        templateUrl: 'html/cricsim/battingScoreCard.html',
+        templateUrl: 'html/experto/battingScoreCard.html',
         link: function (scope, elem, attrs) {
             // do stuff
             scope.tAttrs = attrs;
@@ -21,7 +21,7 @@ myApp.directive('bowlscorecard', function () {
         restrict: 'E',
         scope: true,
         replace: true,
-        templateUrl: 'html/cricsim/bowlingScoreCard.html',
+        templateUrl: 'html/experto/bowlingScoreCard.html',
         link: function (scope, elem, attrs) {
             // do stuff
             scope.tAttrs = attrs;
@@ -39,7 +39,7 @@ myApp.directive('headerbar', function () {
         restrict: 'E',
         scope: true,
         replace: true,
-        templateUrl: 'html/cricsim/headerBar.html',
+        templateUrl: 'html/experto/headerBar.html',
         link: function (scope, elem, attrs) {
             // do stuff
             scope.tAttrs = attrs;
@@ -58,7 +58,7 @@ myApp.directive('battingcontrol', function () {
         restrict: 'E',
         scope: true,
         replace: true,
-        templateUrl: 'html/cricsim/battingControls.html',
+        templateUrl: 'html/experto/battingControls.html',
         link: function (scope, elem, attrs) {
             // do stuff
             scope.tAttrs = attrs;
@@ -76,7 +76,7 @@ myApp.directive('bowlingcontrol', function () {
         restrict: 'E',
         scope: true,
         replace: true,
-        templateUrl: 'html/cricsim/bowlingControls.html',
+        templateUrl: 'html/experto/bowlingControls.html',
         link: function (scope, elem, attrs) {
             // do stuff
             scope.tAttrs = attrs;
@@ -94,7 +94,7 @@ myApp.directive('progressbar', function () {
         restrict: 'E',
         scope: true,
         replace: true,
-        templateUrl: 'html/cricsim/progressBar.html',
+        templateUrl: 'html/experto/progressBar.html',
         link: function (scope, elem, attrs) {
             // do stuff
             scope.tAttrs = attrs;
