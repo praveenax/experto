@@ -1,0 +1,138 @@
+@-ms-viewport {
+    width: 100vw;
+    min-zoom: 100%;
+    zoom: 100%;
+}
+
+@viewport {
+    width: 100vw;
+    min-zoom: 100% zoom: 100%;
+}
+
+@-ms-viewport {
+    user-zoom: fixed;
+    min-zoom: 100%;
+}
+
+@viewport {
+    user-zoom: fixed;
+    min-zoom: 100%;
+}
+
+.navbar {
+    /*    background: #BF360C !important;*/
+}
+
+.statusContainer {
+    height: 75px;
+    /*        background: white;*/
+    margin-bottom: 15px;
+    position: relative;
+    padding: 5px;
+}
+
+.arrowContainer {
+    width: 30%;
+    border: 1px solid black;
+    height: 90px;
+    display: inline-block;
+}
+
+.arrowTail {
+    background: transparent;
+    color: antiquewhite;
+    height: 60px;
+    display: inline-block;
+    margin: 0px;
+    width: 0px;
+    border: 30px solid rebeccapurple;
+    border-left-color: transparent;
+    float: left;
+    border-right-width: 0px;
+}
+
+.arrowBody {
+    width: 58%;
+    background: rebeccapurple;
+    color: white;
+    height: 60px;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    padding: 5px;
+    font-size: 18px;
+    /*        padding: 15px;*/
+}
+
+.arrowHead {
+    width: 5%;
+    background: transparent;
+    color: antiquewhite;
+    height: 60px;
+    display: inline-block;
+    width: 0px;
+    border: 30px solid rebeccapurple;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    float: left;
+}
+
+.arrow {
+    position: absolute;
+    width: 33%;
+}
+
+.feedPanel {
+    padding: 10px;
+}
+
+#ar1 {}
+
+#ar2 {
+    margin-left: 25%;
+}
+
+#ar3 {
+    margin-left: 50%;
+}
+#ar4 {
+    margin-left: 75%;
+}
+
+.companyImg {
+    height: 100px !important;
+    margin: auto;
+    display: block;
+}
+
+.teamImg {
+    height: 100px !important;
+    border-radius: 60px;
+    border: 1px solid #C5C3C3;
+    padding: 10px;
+    /* text-align: center; */
+    margin: auto;
+    display: block;
+    box-shadow: 1px 1px 1px 1px #EAEAEA;
+}
+
+.feed-container {
+    /*    height: 400px;*/
+    /*    overflow: auto;*/
+    padding: 10px;
+}
+
+.skillTag {
+    width: auto;
+    display: inline-block;
+    padding: 8px;
+    background: #6E60B1;
+    color: white;
+    border-radius: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    box-shadow: 0px 1px 2px 1px #B9B1B1;
+    margin: 4px;
+    border: 2px solid white;
+}

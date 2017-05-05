@@ -1,0 +1,24 @@
+{
+  "name": "Experto",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "emotional": "0.0.3",
+    "encoding": "~0.1.12",
+    "express": "~4.13.4",
+    "flat-file-db": "^1.0.0",
+    "lodash": "^4.13.1",
+    "lowdb": "^0.13.0-beta-5",
+    "mysql": "~2.10.2",
+    "pngjs": "~2.3.1",
+    "random-name": "~0.1.1",
+    "twitter": "^1.2.5",
+    "yo": "^1.8.5"
+  }
+}
