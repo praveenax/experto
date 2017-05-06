@@ -190,6 +190,11 @@
     height: 46vh;
 }
 
+
+.msg_tab{
+    color:grey;
+    border-bottom:1px solid black;
+}
 .contact_list{
     list-style:none; 
     display:block;
@@ -219,4 +224,5 @@
 .list_info_icon{
     font-size: 22px;
     line-height: 90px;
+
 }
