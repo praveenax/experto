@@ -173,3 +173,13 @@
     margin: 4px 4px;
     cursor: pointer;
 }
+
+
+.rating_section{
+    height: 46vh;
+    margin-bottom: 2vh;
+}
+
+.suggestion_section{
+    height: 46vh;
+}

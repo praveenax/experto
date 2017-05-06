@@ -221,18 +221,31 @@ function listMessageDetail(auth) {
                 return;
             }
 
-            //              console.log(response);
-
-            responseArr.push(JSON.stringify(response));
-
+//                          console.log(response.snippet);
+            var tmp_obj = {};
+            
+            tmp_obj.id=response.id;
+            tmp_obj.labels=response.labelIds;
+            tmp_obj.snippet=response.snippet;
+            
+            
+            responseArr.push(tmp_obj);
+            console.log(responseArr.length);
+            
+            if(i>=98){
+                fs.writeFile('detail_mail_priya.json', JSON.stringify(responseArr), 'utf8', function () {
+                    console.log("file done");
+                });
+            }
 
         });
+        
+        
+        
     }
 
 
-    fs.writeFile('detail_mailxyz.json', responseArr, 'utf8', function () {
-        console.log("file done");
-    });
+    
 
 
 

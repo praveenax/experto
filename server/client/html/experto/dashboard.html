@@ -59,7 +59,7 @@
                 
                 <div class="col-md-12">
                     
-                    <div class="skill_tag" ng-repeat="skill in skillArr" ng-click="onSkillInfo()">
+                    <div class="skill_tag" ng-repeat="skill in skillArr" ng-click="onSkillInfo(skill)">
                         
                         {{skill}}
                         
@@ -72,7 +72,13 @@
             
             
         </div>
-        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            
+            <div class="rating_section panel panel-default"></div>
+            <div class="suggestion_section  panel panel-default"></div>
+            
+            
+        </div>
         
         
     </div>
