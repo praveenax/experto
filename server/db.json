@@ -1,19 +1,11 @@
 {
   "posts": [
-    {
-      "id": 1,
-      "title": "lowdb is awesome"
-    }
+   
   ],
   "user": {
-    "name": "typicode"
+   
   },
   "random": [
-    {
-      "name": "Ezmeralda Charis"
-    },
-    {
-      "name": "Petronia Stearn"
-    }
+   
   ]
 }

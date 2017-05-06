@@ -29,6 +29,8 @@ myApp.controller('loginCntrl', function ($scope, $http) {
 
 myApp.controller('dashCntrl', function ($scope, $http) {
     
+    
+    
 
 //    $http({method: 'GET', url: 'www.google.com/m8/feeds/contacts/default/full', headers: {
 //        "GData-Version":"3.0"
@@ -49,9 +51,73 @@ myApp.controller('dashCntrl', function ($scope, $http) {
     $http.get('/prepprax').success(function(resp){
         console.log(resp);
         
-        $scope.user_list = resp.feed.entry;
+        
+        $scope.tmp_user_list = resp.feed.entry;
+        
+        for(var i=0;i<$scope.tmp_user_list.length;i++){
+           $scope.tmp_user_list[i]["id"]["_id"] = extrId($scope.tmp_user_list[i]["id"]["$t"]);
+            
+            
+        }
+        
+        
+         $scope.user_list =  $scope.tmp_user_list;
+        
+        
         
     });
+    
+    
+    $scope.skillArr = ["Manager","Sales","Mumbai","Designer"];
+    
+    
+    $scope.selectUser = function(email){
+        
+        var selected_user_obj = {};
+        
+        for(var i =0;i<$scope.user_list.length;i++){
+            
+            var tmp_obj = $scope.user_list[i];
+            if(tmp_obj.gd$email[0].address == email){
+             
+                selected_user_obj = tmp_obj;
+                break;
+            }
+        }
+        
+        $scope.selected_user_obj = selected_user_obj;
+        
+    }
+    
+    
+    function extrId(txt){
+//         var txt='http://www.google.com/m8/feeds/contacts/sahayajeswin@gmail.com/base/e25ac8b342789';
+
+      var re1='.*?';	// Non-greedy match on filler
+      var re2='(base)';	// Word 1
+      var re3='(\\/)';	// Any Single Character 1
+      var re4='((?:[a-z][a-z]*[0-9]+[a-z0-9]*))';	// Alphanum 1
+
+      var p = new RegExp(re1+re2+re3+re4,["i"]);
+      var m = p.exec(txt);
+      if (m != null)
+      {
+          var word1=m[1];
+          var c1=m[2];
+          var alphanum1=m[3];
+//          document.write("("+word1.replace(/</,"&lt;")+")"+"("+c1.replace(/</,"&lt;")+")"+"("+alphanum1.replace(/</,"&lt;")+")"+"\n");
+          
+          return alphanum1;
+          
+      }else{
+          return '0';
+      }
+    }
+    
+    
+    $scope.onSkillInfo = function(skill){
+        
+    }
     
 
 });
