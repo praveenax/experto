@@ -12,6 +12,42 @@ myApp.controller('cntrl', function ($scope, $http) {
 
 });
 
+
+myApp.controller('landingCntrl', function ($scope, $http) {
+    
+
+
+
+});
+
+myApp.controller('loginCntrl', function ($scope, $http) {
+    
+
+
+
+});
+
+myApp.controller('dashCntrl', function ($scope, $http) {
+    
+
+//    $http({method: 'GET', url: 'www.google.com/m8/feeds/contacts/default/full', headers: {
+//        "GData-Version":"3.0"
+////        'Authorization': 'Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ=='
+//    }
+//    });
+    
+    $http.get('https://www.google.com/m8/feeds/contacts/default/full', {
+    headers: {
+        "GData-Version":"3.0"
+    }
+  }).success(function(response){
+    console.log(response)
+  });
+    
+    
+
+});
+
 //homeContrl
 myApp.controller('homeContrl', function ($scope, $http) {
 

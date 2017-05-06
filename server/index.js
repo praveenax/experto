@@ -28,6 +28,14 @@ app.get('/', function (req, res) {
 
 });
 
+app.get('/mail', function (req, res) {
+
+  res.sendfile('client/mail.html');
+//  res.sendfile('client/cricsim.html');
+//    res.sendfile('client/merchant.html');
+
+});
+
 app.get('/test', function (req, res) {
 
   // var data = {
