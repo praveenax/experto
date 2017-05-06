@@ -27,8 +27,11 @@ myApp.controller('loginCntrl', function ($scope, $http) {
 
 });
 
-myApp.controller('dashCntrl', function ($scope, $http) {
+myApp.controller('dashCntrl', function ($scope, $http,$routeParams) {
     
+    
+    $scope.username = $routeParams.username;
+    console.log($scope.username);
     
     function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -68,6 +71,9 @@ myApp.controller('dashCntrl', function ($scope, $http) {
         
         
     });
+    
+    
+   
     
     $scope.random_tags = ["Sales","Artist","Photoshop","Tally","Marketing","HR","Programming","Therapist","Physiotheraphy","Dancer","Decorator","Event Planner","Coaching"];
 //    $scope.skillArr = ["Manager","Sales","Mumbai","Designer"];

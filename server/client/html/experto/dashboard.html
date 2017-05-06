@@ -38,7 +38,7 @@
     <div style="padding:20px;background:#fff;">
         <div class="row ">
             <div class="col-md-12">
-                <input type="text" placeholder="Search Contact" class="col-md-12 form-control" style="height: 60px;border-radius: 30px;background-color: #fbfbfb;padding: 0px 30px;">
+                <input ng-model="search_contact_query" type="text" placeholder="Search Contact" class="col-md-12 form-control" style="height: 60px;border-radius: 30px;background-color: #fbfbfb;padding: 0px 30px;">
             </div>
         </div>
         <div class="row ">
@@ -49,7 +49,8 @@
                            <div class="list_user_img"></div>
                        </div>
                        <div class="col-md-7">
-                              <h4>{{user.gd$email[0].address}}</h4>
+<!--                              <h4>{{user.gd$email[0].address}}</h4>-->
+                              <h4>{{user.title.$t}}</h4>
 <!--
                               <ul class="contact_list"> 
                                   <li class="contact_item">Python</li>
