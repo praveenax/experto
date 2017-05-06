@@ -20,7 +20,12 @@ db.defaults({
     .value()
 
 
+
+var http = require('http');
+//.Server(app);
 var app = express();
+var server = http.createServer(app);
+var io = require('socket.io').listen(server);
 
 app.use(express.static('client'));
 
@@ -126,11 +131,24 @@ app.get('/test', function (req, res) {
 
 });
 
-var server = app.listen(3003, function () {
-    var host = server.address().address;
-    var port = server.address().port;
 
 
-
-    console.log('Experto listening at http://%s:%s', host, port);
+io.on('connection', function(socket){
+  console.log('a user connected');
+    
+    socket.on('chat message', function(msg){
+   console.log(msg.user);
+        io.emit('newbeam', msg);
+  });
 });
+
+
+server.listen(3003);
+//var server = app.listen(3003, function () {
+//    var host = server.address().address;
+//    var port = server.address().port;
+//
+//
+//
+//    console.log('Experto listening at http://%s:%s', host, port);
+//});

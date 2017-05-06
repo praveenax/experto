@@ -162,7 +162,7 @@
 }
 
 .user_email_list {
-    height: 75vh;
+    height: 70vh;
     overflow: auto;
     overflow-x: hidden;
     background: #fbfbfb;
@@ -191,7 +191,7 @@
 }
 
 .chat_section{
-    height:20vh;
+    height:27vh;
 }
 
 

@@ -75,7 +75,7 @@
         </div>
         <div class="col-md-4">
 
-            <div class="detail_panel panel panel-default" style="height:90vh; padding:20px;">
+            <div class="detail_panel panel panel-default" style="height:97vh; padding:20px;">
                 
                 <div class="row">
                     <div class="col-md-4">
@@ -139,10 +139,10 @@
                 
                 <div class="col-md-12">
                     <div class="col-md-9">
-                        <input type="text" class="form-control" placeholder="Beam here!" style="    height:60px;font-size: 20px;">
+                        <input ng-model="beaminput" type="text" class="form-control" placeholder="Beam here!" style="    height:60px;font-size: 20px;">
                     </div>
                     <div class="col-md-3">
-                        <button class="btn btn-default" style="background-image:url('UI-07.jpg');background-image: url(UI-07.jpg);
+                        <button ng-click="onBeam()" class="btn btn-default" style="background-image:url('UI-07.jpg');background-image: url(UI-07.jpg);
     height: 60px;
     width: 60px;
     background-size: cover;

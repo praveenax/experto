@@ -1,6 +1,24 @@
 var CMT = "";
 var total = 0;
+
+
+var USERNAME="";
+
+
 myApp.controller('cntrl', function ($scope, $http) {
+    
+    $scope.echoCount = 0;
+    
+    socket.on('newbeam', function(msg){
+      if(msg.user != USERNAME){
+          console.log(msg.message);
+          $scope.$apply(function(){
+            $scope.echoCount = $scope.echoCount+1;
+              
+          });
+      }
+    });
+    
     $scope.itemList = [
         {
             name: "Home",
@@ -31,6 +49,8 @@ myApp.controller('dashCntrl', function ($scope, $http,$routeParams) {
     
     
     $scope.username = $routeParams.username;
+    USERNAME = $scope.username;
+    
     console.log($scope.username);
     
     function getRandomInt(min, max) {
@@ -149,6 +169,17 @@ myApp.controller('dashCntrl', function ($scope, $http,$routeParams) {
         
         $scope.suggestion_obj.arr = [0,1,2,3];
         
+    }
+    
+    
+    $scope.onBeam = function(){
+        
+        var data = {
+            user:$scope.username,
+            message:$scope.beaminput
+        }
+        socket.emit('chat message', data);
+      $scope.beaminput = "";
     }
     
 
