@@ -142,6 +142,9 @@
     padding: 20px;
     margin-bottom: 4px;
     cursor: pointer;
+        background: #fbfbfb;
+    border: 0px;
+    border-bottom: 1px solid #eee;
 }
 
 .sidebarMenu {
@@ -159,8 +162,10 @@
 }
 
 .user_email_list {
-    height: 90vh;
+    height: 75vh;
     overflow: auto;
+        background: #fbfbfb;
+    margin-top:20px;
 }
 
 .skill_tag {
