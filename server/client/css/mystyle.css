@@ -182,12 +182,16 @@
 
 
 .rating_section{
-    height: 46vh;
+    height: 25vh;
     margin-bottom: 2vh;
 }
 
 .suggestion_section{
-    height: 46vh;
+    height: 40vh;
+}
+
+.chat_section{
+    height:20vh;
 }
 
 

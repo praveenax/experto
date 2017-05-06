@@ -114,8 +114,17 @@ myApp.controller('dashCntrl', function ($scope, $http) {
       }
     }
     
+    $scope.rating_obj = {};
+    $scope.suggestion_obj = {};
+    
     
     $scope.onSkillInfo = function(skill){
+        
+        $scope.rating_obj.name = skill;
+        
+        $scope.rating_obj.val = 3.5;
+        
+        $scope.suggestion_obj.arr = [0,1,2,3];
         
     }
     

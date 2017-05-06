@@ -61,9 +61,7 @@
                            <i class="fa fa-info-circle"></i> 
                            </div>
                        </div>
-                        <!--                       <div class="col-md-12">{{user.id._id}}</div> -->
-                        <!--                       <div class="col-md-6">{{user.title.$t}}</div> -->
-                        <!--                       <div class="col-md-6">{{user.gd$phoneNumber[0].$t}} </div>-->
+                       
 
                     </div>
 
@@ -120,8 +118,37 @@
         </div>
         <div class="col-md-4">
 
-            <div class="rating_section panel panel-default"></div>
-            <div class="suggestion_section  panel panel-default"></div>
+            <div class="rating_section panel panel-default" style="text-align:center;">
+                
+                <h3>Rating</h3>
+                
+                <h4>{{rating_obj.name}}</h4>
+                <h4>{{rating_obj.val}}</h4>
+            </div>
+            <div class="suggestion_section  panel panel-default">
+                <h3>Suggestions</h3>
+                
+                <div class="suggested_users" ng-repeat="a in suggestion_obj.arr">test</div>
+            </div>
+            <div class="chat_section  panel panel-default">
+                <h4>Find your Skill Requirement with ECHO</h4>
+                <span>Beam your ECHO to your contacts to find your ideal Expert!</span>
+                <br>
+                
+                <div class="col-md-12">
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" placeholder="Beam here!" style="    height:60px;font-size: 20px;">
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-default" style="background-image:url('UI-07.jpg');background-image: url(UI-07.jpg);
+    height: 60px;
+    width: 60px;
+    background-size: cover;
+    border-radius: 12px;"></button>
+                    </div>
+                </div>
+                
+            </div>
 
 
         </div>
