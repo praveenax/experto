@@ -130,6 +130,28 @@ myApp.controller('homeContrl', function ($scope, $http) {
 });
 
 
+myApp.controller('authControl', function ($scope, $http) {
+
+    //$scope.progressButtonClick = function(){            
+            
+            var elem = document.getElementById("myBar");
+            var width = 0;
+            var id = setInterval(frame, 60);
+            function frame(){
+                if (width >= 100) {
+                    clearInterval(id);
+                } 
+                else {
+                        width++;
+                        elem.style.width = width + '%';
+                } 
+            }  
+        
+   // }
+
+});
+
+
 
 
 function simulateScore(tmp_SC, tmp_BF, tmp_cmmt, tmp_conc) {
