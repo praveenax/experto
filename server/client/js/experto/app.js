@@ -15,6 +15,11 @@ myApp.config(function ($routeProvider) {
             templateUrl: 'html/experto/auth.html',
             controller:'authControl'
         })
+    
+      .when('/echos', {
+            templateUrl: 'html/experto/echos.html',
+            controller:'echosControl'
+        })
 //        .when('/', {
 //            templateUrl: 'html/experto/home.html',
 //            controller: 'homeContrl'

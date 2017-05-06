@@ -188,3 +188,8 @@
 .suggestion_section{
     height: 46vh;
 }
+
+.msg_tab{
+    color:grey;
+    border-bottom:1px solid black;
+}

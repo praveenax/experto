@@ -129,6 +129,15 @@ myApp.controller('homeContrl', function ($scope, $http) {
 
 });
 
+myApp.controller('echosControl', function ($scope, $http) {
+    
+    $scope.messages = [0,1,2,3,4,5,6,7,8,9,10,11,12,13];
+
+    
+    $scope.peepArr = [0,1,2];
+
+});
+
 
 myApp.controller('authControl', function ($scope, $http) {
 
