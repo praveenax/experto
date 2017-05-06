@@ -132,14 +132,22 @@ myApp.controller('homeContrl', function ($scope, $http) {
 
 myApp.controller('authControl', function ($scope, $http) {
 
-    //$scope.progressButtonClick = function(){            
+    //$scope.progressButtonClick = function(){     
+    $scope.showNext = false;
             
             var elem = document.getElementById("myBar");
             var width = 0;
             var id = setInterval(frame, 60);
             function frame(){
                 if (width >= 100) {
+                    
+                    console.log($scope.showNext);
+                     $scope.$apply(function () {
+                        $scope.showNext = true;
+                          console.log($scope.showNext);
+                    });
                     clearInterval(id);
+                      
                 } 
                 else {
                         width++;
