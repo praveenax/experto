@@ -50,15 +50,17 @@
                        </div>
                        <div class="col-md-7">
                               <h4>{{user.gd$email[0].address}}</h4>
+<!--
                               <ul class="contact_list"> 
                                   <li class="contact_item">Python</li>
                                   <li class="contact_item">Python</li>
                                   <li class="contact_item">Python</li>
                               </ul>
+-->
                        </div>
                        <div class="col-md-1">
                            <div class="text-center list_info_icon">
-                           <i class="fa fa-info-circle"></i> 
+<!--                           <i class="fa fa-info-circle"></i> -->
                            </div>
                        </div>
                        
@@ -81,9 +83,12 @@
                         </div>
                     </div>
                     <div class="col-md-8">
-                       <h4>Yogananth Gopinathan</h4>                        
+                        <h3>{{selected_user_obj.title.$t}}</h3>
+                    <br>
+                    <h4>{{selected_user_obj.gd$email[0].address}}</h4>                       
                     </div>
                 </div>
+<!--
                 <div class="row">
                   <h3>General</h3>
                    <div class="col-md-12">
@@ -91,13 +96,9 @@
                    <p >UI/ UX Designer</p>
                    </div>                    
                 </div>
+-->
 
-                <div class="col-md-12" style="text-align:center;">
-                    <h3>{{selected_user_obj.title.$t}}</h3>
-                    <br>
-                    <h4>{{selected_user_obj.gd$email[0].address}}</h4>
-
-                </div>
+             
 
                 <br><br><br>
 

@@ -30,7 +30,9 @@ myApp.controller('loginCntrl', function ($scope, $http) {
 myApp.controller('dashCntrl', function ($scope, $http) {
     
     
-    
+    function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 //    $http({method: 'GET', url: 'www.google.com/m8/feeds/contacts/default/full', headers: {
 //        "GData-Version":"3.0"
@@ -67,8 +69,9 @@ myApp.controller('dashCntrl', function ($scope, $http) {
         
     });
     
-    
-    $scope.skillArr = ["Manager","Sales","Mumbai","Designer"];
+    $scope.random_tags = ["Sales","Artist","Photoshop","Tally","Marketing","HR","Programming","Therapist","Physiotheraphy","Dancer","Decorator","Event Planner","Coaching"];
+//    $scope.skillArr = ["Manager","Sales","Mumbai","Designer"];
+    $scope.skillArr = [];
     
     
     $scope.selectUser = function(email){
@@ -86,6 +89,20 @@ myApp.controller('dashCntrl', function ($scope, $http) {
         }
         
         $scope.selected_user_obj = selected_user_obj;
+        
+        
+        $scope.skillArr = [];
+        $scope.random_tags = _.shuffle($scope.random_tags);
+        
+        for(var i=0;i<getRandomInt(1,3);i++){
+            
+            
+            $scope.skillArr.push($scope.random_tags[i]);
+            
+        }
+        
+        
+        
         
     }
     
