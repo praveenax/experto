@@ -1,4 +1,11 @@
-<div class="row">
+
+    <style>
+        body{
+        }
+
+    </style>
+
+    <div class="row">
 
     <!--
     <div class="col-md-1" style="">
@@ -22,33 +29,45 @@
 
     </div>
 -->
-    <div class="col-md-12">
+    <div class="col-md-12 dash_page" style=argin:20px 0px;">
 
-        <div class="col-md-4" style="    padding: 32px;
-    background: #fff;">
-            <div style="background:#fff;">
-                <div class="row ">
-
-                    <input type="text" placeholder="Search Contact" class="col-md-12 form-control" style="    height: 60px;
-    border-radius: 30px;
-    background-color: #fbfbfb;">
-
-                </div>
-                <div class="row user_email_list">
-
-
+<div class="col-md-4">
+    <div style="padding:20px;background:#fff;">
+        <div class="row ">
+            <div class="col-md-12">
+                <input type="text" placeholder="Search Contact" class="col-md-12 form-control" style="height: 60px;border-radius: 30px;background-color: #fbfbfb;padding: 0px 30px;">
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-12" style="padding: 20px 25px;">
+                <div class="user_email_list">
                     <div ng-repeat="user in user_list" class="panel panel-default contact_card row" ng-click="selectUser(user.gd$email[0].address)">
+                       <div class="col-md-3">
+                           <div class="list_user_img"></div>
+                       </div>
+                       <div class="col-md-7">
+                              <h4>{{user.gd$email[0].address}}</h4>
+                              <ul class="contact_list"> 
+                                  <li class="contact_item">Python</li>
+                                  <li class="contact_item">Python</li>
+                                  <li class="contact_item">Python</li>
+                              </ul>
+                       </div>
+                       <div class="col-md-1">
+                           <div class="text-center list_info_icon">
+                           <i class="fa fa-info-circle"></i> 
+                           </div>
+                       </div>
                         <!--                       <div class="col-md-12">{{user.id._id}}</div> -->
                         <!--                       <div class="col-md-6">{{user.title.$t}}</div> -->
-                        <div class="col-md-6">{{user.gd$email[0].address}} </div>
                         <!--                       <div class="col-md-6">{{user.gd$phoneNumber[0].$t}} </div>-->
 
                     </div>
 
-
-
                 </div>
             </div>
+        </div>
+    </div>
         </div>
         <div class="col-md-4">
 

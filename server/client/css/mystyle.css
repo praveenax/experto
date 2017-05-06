@@ -164,8 +164,9 @@
 .user_email_list {
     height: 75vh;
     overflow: auto;
-        background: #fbfbfb;
-    margin-top:20px;
+    overflow-x: hidden;
+    background: #fbfbfb;
+    margin-top: 20px;
 }
 
 .skill_tag {
@@ -187,4 +188,35 @@
 
 .suggestion_section{
     height: 46vh;
+}
+
+.contact_list{
+    list-style:none; 
+    display:block;
+    margin:0px;
+    padding:0px;
+}
+.contact_item{
+       display: inline-block;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    background: #222;
+    color: #fff;
+    font-size: 11px;
+    border-radius: 7px;
+}
+
+.list_user_img{
+        width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: block;
+    background: #ccc;
+    line-height: 70px;
+}
+
+
+.list_info_icon{
+    font-size: 22px;
+    line-height: 90px;
 }
