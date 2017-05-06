@@ -1,7 +1,7 @@
 var express = require('express');
 var randomName = require('random-name');
 //var predict = require("brain-predict");
-//var fs = require('fs');
+var fs = require('fs');
 //var path = require('path');
 //var flatfile = require('flat-file-db');
 //var db = flatfile('flat/my.db');
@@ -35,6 +35,25 @@ app.get('/mail', function (req, res) {
 //    res.sendfile('client/merchant.html');
 
 });
+
+app.get('/prepprax', function (req, res) {
+
+  fs.readFile('SAMPLE_CONTACTS.js', function read(err, data) {
+    if (err) {
+        throw err;
+    }
+  
+//    console.log(data.toString()); 
+      
+      
+      res.send(data.toString());
+   
+});
+
+});
+
+
+
 
 app.get('/test', function (req, res) {
 

@@ -36,14 +36,22 @@ myApp.controller('dashCntrl', function ($scope, $http) {
 //    }
 //    });
     
-    $http.get('https://www.google.com/m8/feeds/contacts/default/full', {
-    headers: {
-        "GData-Version":"3.0"
-    }
-  }).success(function(response){
-    console.log(response)
-  });
+//    $http.get('https://www.google.com/m8/feeds/contacts/default/full', {
+//    headers: {
+//        "GData-Version":"3.0"
+//    }
+//  }).success(function(response){
+//    console.log(response)
+//  });
     
+    $scope.user_list = [];
+    
+    $http.get('/prepprax').success(function(resp){
+        console.log(resp);
+        
+        $scope.user_list = resp.feed.entry;
+        
+    });
     
 
 });
@@ -56,134 +64,7 @@ myApp.controller('homeContrl', function ($scope, $http) {
 });
 
 
-myApp.controller('matchContrl', function ($scope, $http) {
 
-    $scope.totalScore = "0";
-    $scope.team1 = "India";
-    $scope.team2 = "Pakistan";
-    $scope.batList = batData;
-    $scope.bowlList = bowlData;
-    $scope.selectBowl = $scope.bowlList[0].name;
-    $scope.selectBat = $scope.batList[0].name;
-
-    //    $("#bowlTab_content").hide();
-
-    $scope.onSimulate = function (ballCount) {
-
-
-        changeBowler();
-
-
-        for (var x = 0; x < ballCount; x++) {
-
-            if ($scope.selectBowl != undefined && $scope.selectBat != undefined) {
-                var cmmt = $scope.selectBowl + " is bowling to " + $scope.selectBat + "";
-
-
-                for (var i = 0; i < $scope.batList.length; i++) {
-
-                    if ($scope.selectBat == $scope.batList[i].name) {
-                        var SC = parseInt($scope.batList[i].score);
-                        var BF = parseInt($scope.batList[i].ballFaced)
-                        var res_Obj = simulateScore(SC, BF, cmmt, $scope.batList[i].conc);
-                        var currStr = ((res_Obj.SC / res_Obj.BF) * 100).toFixed(2);
-
-                        $scope.batList[i].score = "" + res_Obj.SC;
-                        $scope.batList[i].ballFaced = "" + res_Obj.BF;
-                        $scope.batList[i].currStr = "" + currStr;
-                        //isDecay_conc
-
-                        //                        calcConcentration(res_Obj.isDecay_conc);
-                        if (res_Obj.isDecay_conc == true) {
-                            $scope.batList[i].conc = $scope.batList[i].conc - $scope.batList[i].conc_decay
-                        } else {
-                            $scope.batList[i].conc = $scope.batList[i].conc + $scope.batList[i].conc_incre
-                        }
-
-                        //                        $scope.batList[i].conc = "" + currStr;
-                        //                        conc_decay
-
-                        $scope.totalScore = "" + total;
-                        //                        $scope.batList[i].isFacing = res_Obj.facing;
-
-                        change_Batsman_onOver(res_Obj, i);
-
-                        break;
-                    }
-                }
-
-
-
-                $scope.comment = CMT + "\n" +
-                    res_Obj.cmmt;
-
-                CMT = CMT + "\n" +
-                    res_Obj.cmmt;
-
-                // score logic
-
-                // score = random(0,1) <-- hit or not  <-- how gud bowler
-                // score (hit) -- random(0,6) <-- 0,1,2,3,4,5(4) or 6
-            } else {
-                alert("Select Options");
-            }
-
-
-
-
-
-        }
-
-
-
-    }
-
-    function changeBowler() {
-        if ($scope.bowlList[0].isBowling == true) {
-            $scope.selectBowl = $scope.bowlList[0].name;
-            $scope.bowlList[1].isBowling = true;
-            $scope.bowlList[0].isBowling = false;
-
-        } else if ($scope.bowlList[1].isBowling == true) {
-            $scope.selectBowl = $scope.bowlList[1].name;
-            $scope.bowlList[1].isBowling = false;
-            $scope.bowlList[0].isBowling = true;
-        }
-    }
-
-    function change_Batsman_onOver(res_Obj, i) {
-        if (!res_Obj.facing && i == 0) {
-            $scope.batList[1].isFacing = true;
-            $scope.batList[0].isFacing = false;
-            $scope.selectBat = $scope.batList[1].name;
-        } else if (!res_Obj.facing && i == 1) {
-            $scope.batList[0].isFacing = true;
-            $scope.batList[1].isFacing = false;
-            $scope.selectBat = $scope.batList[0].name;
-        }
-
-    }
-
-    $scope.onBowlingTab = function () {
-        console.log("bowl");
-        $("#batTab").addClass("tabHeader-clicked");
-        $("#bowlTab").removeClass("tabHeader-clicked");
-        $("#bowlTab_content").show();
-        $("#batTab_content").hide();
-    }
-
-    $scope.onBattingTab = function () {
-        console.log("bat");
-        $("#batTab").removeClass("tabHeader-clicked");
-        $("#bowlTab").addClass("tabHeader-clicked");
-
-        $("#bowlTab_content").hide();
-        $("#batTab_content").show();
-    }
-
-
-
-});
 
 function simulateScore(tmp_SC, tmp_BF, tmp_cmmt, tmp_conc) {
     var obj = {};
