@@ -1,15 +1,35 @@
 <div class="row">
     
-    <div class="col-md-2" style=""></div>
-    <div class="col-md-10">
+    <div class="col-md-1" style="">
+        
+        <div class="sidebarMenu">
+            
+            <div class="menu-item"><i class="fa fa-search" aria-hidden="true"></i> <br>Search</div>
+           
+            <div class="menu-item"><i class="fa fa-mouse-pointer" aria-hidden="true"></i> <br>Activity</div>
+         
+            <div class="menu-item"><i class="fa fa-user" aria-hidden="true"></i> <br>Profile</div>
+<!--
+            <div class="menu-item"></div>
+            <div class="menu-item"></div>
+            <div class="menu-item"></div>
+-->
+            
+        </div>
+        
+        
+        
+    </div>
+    <div class="col-md-11">
         
         <div class="col-md-4">
-            <div class="row">
+            <div class="row user_email_list" >
                 
 
-                    <div ng-repeat="user in user_list" class="panel panel-default contact_card row">
-    <!--                    {{user.title.$t}}-->
-                       <div class="col-md-6 col-md-offset-3">{{user.gd$email[0].address}} </div>
+                    <div ng-repeat="user in user_list" class="panel panel-default contact_card row" ng-click="selectUser(user.gd$email[0].address)">
+<!--                       <div class="col-md-12">{{user.id._id}}</div> -->
+<!--                       <div class="col-md-6">{{user.title.$t}}</div> -->
+                       <div class="col-md-6">{{user.gd$email[0].address}} </div>
 <!--                       <div class="col-md-6">{{user.gd$phoneNumber[0].$t}} </div>-->
 
                     </div>
@@ -18,8 +38,47 @@
             
             </div>
         </div>
-        <div class="col-md-4"></div>
-        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            
+            <div class="detail_panel panel panel-default" style="height:90vh;">
+                
+                <div class="col-md-12" style="text-align: center;">
+                    <i class="fa fa-user" aria-hidden="true" style="    font-size: 60px;
+    text-align: center;
+    padding: 40px;"></i>
+                </div>
+                
+                <div class="col-md-12" style="text-align:center;">
+                    <h3>{{selected_user_obj.title.$t}}</h3>
+                    <br>
+                    <h4>{{selected_user_obj.gd$email[0].address}}</h4>
+                    
+                </div>
+                
+                <br><br><br>
+                
+                <div class="col-md-12">
+                    
+                    <div class="skill_tag" ng-repeat="skill in skillArr" ng-click="onSkillInfo(skill)">
+                        
+                        {{skill}}
+                        
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+            
+            
+        </div>
+        <div class="col-md-4">
+            
+            <div class="rating_section panel panel-default"></div>
+            <div class="suggestion_section  panel panel-default"></div>
+            
+            
+        </div>
         
         
     </div>

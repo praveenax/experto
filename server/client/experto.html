@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/lib/font-awesome.css">
     <link rel="stylesheet" href="css/lib/dashboard.css">
     <link rel="stylesheet" href="css/lib/jquery-ui.css">
+    <link rel="stylesheet" href="css/lib/custom.css">
 
 
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
@@ -19,35 +20,21 @@
             background: #27ae60;
         }
     </style>
-
 </head>
 
-<body ng-app="cricsim" ng-controller="cntrl" style="background: #f3f3f3;
-    font-family: 'Lato', sans-serif;">
+<body ng-app="cricsim" ng-controller="cntrl" style="background: #f3f3f3; font-family: 'Lato', sans-serif;">
+
+<headerbar></headerbar>
 
 
-
-    <headerbar></headerbar>
-
-
-    <div class="col-md-12">
-        <div class="container-fluid">
-            <div class="row">
-
-
-                <div ng-view class="col-sm-9 col-sm-offset-3 col-md-12 col-md-offset-0" style="    padding: 10px;">
-
-                </div>
-            </div>
-        </div>
+<section>
+    <div ng-view class="container-fluid">
+            
     </div>
+</section>
     
     
     <footerdiv></footerdiv>
-
-
-
-
 
     <script src="js/lib/angular.min.js"></script>
     <script src="js/lib/angular-route.min.js"></script>
