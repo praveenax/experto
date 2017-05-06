@@ -144,18 +144,32 @@
     cursor: pointer;
 }
 
-
-.sidebarMenu{
+.sidebarMenu {
     width: 100%;
-    
 }
 
-.menu-item{
+.menu-item {
     height: 60px;
     text-align: center;
     padding: 10px;
     border-radius: 4px;
     border: 1px solid #d0cbcb;
     margin-bottom: 4px;
-        cursor: pointer;
+    cursor: pointer;
+}
+
+.user_email_list {
+    height: 90vh;
+    overflow: auto;
+}
+
+.skill_tag {
+    padding: 10px;
+    border: 1px solid grey;
+    display: inline-block;
+    float: left;
+    border-radius: 4px;
+    font-size: 12px;
+    margin: 4px 4px;
+    cursor: pointer;
 }

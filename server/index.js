@@ -50,8 +50,8 @@ app.get('/body', function (req, res) {
 
 app.get('/prepprax', function (req, res) {
 
-//    fs.readFile('SAMPLE_CONTACTS.js', function read(err, data) {
-    fs.readFile('data_contacts.js', function read(err, data) {
+    fs.readFile('SAMPLE_CONTACTS.js', function read(err, data) {
+//    fs.readFile('data_contacts.js', function read(err, data) {
         if (err) {
             throw err;
         }
