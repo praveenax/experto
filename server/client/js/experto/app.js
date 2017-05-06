@@ -11,6 +11,10 @@ myApp.config(function ($routeProvider) {
             templateUrl: 'html/experto/login.html',
             controller: 'loginCntrl'
         })
+    .when('/auth', {
+            templateUrl: 'html/experto/auth.html',
+            controller:'authControl'
+        })
 //        .when('/', {
 //            templateUrl: 'html/experto/home.html',
 //            controller: 'homeContrl'
@@ -23,6 +27,11 @@ myApp.config(function ($routeProvider) {
      .when('/dashboard', {
             templateUrl: 'html/experto/dashboard.html',
             controller: 'dashCntrl'
+        })
+
+    
+     .when('/uboard', {
+            templateUrl: 'html/experto/uboard.html'
         });
 
     //wbd
