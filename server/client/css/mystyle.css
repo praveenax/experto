@@ -96,6 +96,7 @@
 #ar3 {
     margin-left: 50%;
 }
+
 #ar4 {
     margin-left: 75%;
 }
@@ -137,8 +138,24 @@
     border: 2px solid white;
 }
 
-
-.contact_card{
-        padding: 20px;
+.contact_card {
+    padding: 20px;
     margin-bottom: 4px;
+    cursor: pointer;
+}
+
+
+.sidebarMenu{
+    width: 100%;
+    
+}
+
+.menu-item{
+    height: 60px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #d0cbcb;
+    margin-bottom: 4px;
+        cursor: pointer;
 }

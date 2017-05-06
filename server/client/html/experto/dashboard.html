@@ -1,15 +1,34 @@
 <div class="row">
     
-    <div class="col-md-2" style=""></div>
-    <div class="col-md-10">
+    <div class="col-md-1" style="">
+        
+        <div class="sidebarMenu">
+            
+            <div class="menu-item"><i class="fa fa-search" aria-hidden="true"></i> <br>Search</div>
+           
+            <div class="menu-item"><i class="fa fa-mouse-pointer" aria-hidden="true"></i> <br>Activity</div>
+         
+            <div class="menu-item"><i class="fa fa-user-circle-o" aria-hidden="true"></i> <br>Profile</div>
+<!--
+            <div class="menu-item"></div>
+            <div class="menu-item"></div>
+            <div class="menu-item"></div>
+-->
+            
+        </div>
+        
+        
+        
+    </div>
+    <div class="col-md-10 col-md-offset-1">
         
         <div class="col-md-4">
             <div class="row">
                 
 
                     <div ng-repeat="user in user_list" class="panel panel-default contact_card row">
-    <!--                    {{user.title.$t}}-->
-                       <div class="col-md-6 col-md-offset-3">{{user.gd$email[0].address}} </div>
+                       <div class="col-md-6">{{user.title.$t}}</div> 
+                       <div class="col-md-6">{{user.gd$email[0].address}} </div>
 <!--                       <div class="col-md-6">{{user.gd$phoneNumber[0].$t}} </div>-->
 
                     </div>
