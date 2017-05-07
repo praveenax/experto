@@ -29,12 +29,23 @@
                 <div class="col-md-10">
                     <div class="col-md-12" style=" font-size: 16px;
 ">
-                        Yoga
+                        {{m.user}}
                     </div>
                     <div class="col-md-12" style=" font-size: 20px;
 ">
-                        For Angular
+                       Looking for {{m.message}}
+                        
                     </div>
+                </div>
+
+
+            </div>
+            
+            <div class="echo_chat_title row" ng-if="messages.length==0" style="    padding: 10px;
+    border-bottom: 1px solid grey;">
+
+                <div class="col-md-12">
+                    No New Echos!
                 </div>
 
 
