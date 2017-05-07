@@ -221,12 +221,16 @@
 }
 
 .list_user_img{
-        width: 70px;
+    width: 70px;
     height: 70px;
     border-radius: 50%;
     display: block;
     background: #ccc;
     line-height: 70px;
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+    text-transform: uppercase;
 }
 
 
