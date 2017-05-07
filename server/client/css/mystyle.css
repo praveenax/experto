@@ -182,18 +182,23 @@
 
 
 .rating_section{
-    height: 25vh;
+    min-height: 25vh;
     margin-bottom: 2vh;
+    height: auto;
 }
 
 .suggestion_section{
-    height: 40vh;
+    min-height: 30vh;
+    padding: 20px;
+    height: auto;
 }
 
 .chat_section{
-    height:27vh;
+    min-height: 27vh;
+    padding: 20px;
+    text-align: center;
+    height: auto;
 }
-
 
 .msg_tab{
     color:grey;
