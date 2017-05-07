@@ -16,14 +16,22 @@
         <div class="col-md-4" style="height:88vh;    overflow: auto;background: #d8d8d8;">
 
             <div class="echo_chat_title row" ng-repeat="m in messages" style="    padding: 10px;
-    border-bottom: 1px solid grey;">
+    border-bottom: 1px solid grey;" ng-click="showMessageDetail(m)">
 
                 <div class="col-md-2" style="border-left: 6px solid #03dc03;">
+<!--
                     <div style="    background-image: url(U2.jpg);
     width: 50px;
     height: 50px;
     border-radius: 40px;
     background-size: contain;"></div>
+-->
+               
+               <div class="list_user_img">
+                                        
+                                        {{m.user.title.$t.split("")[0]}}
+                                        
+                                    </div>
                 </div>
                 <div class="col-md-10">
                     <div class="col-md-12" style=" font-size: 16px;
@@ -52,23 +60,24 @@
 
         </div>
         <div class="col-md-8" style="height:88vh;background:#d8d8d8;">
+           
+           <div ng-if="showMsgDetail">
             <div class="row" style="padding:40px 50px;">
                 <div class="col-md-12">
 
+<!--
                     <div class="col-md-3" style=" background-image: url(u2.jpg); height: 150px; width: 150px; margin-top: 5px; background-size: contain; border:2px solid #fbfbfb">
                     </div>
-                    <div class="col-md-8">
-                        <h3 style="
-    font-size: 30px;
-    color: #4537e7;
-">Yogananth</h3>
-                        <h4>UI/UX</h4>
+-->
+                    <div class="col-md-12">
+                        <h3 style="font-size: 30px;color: #4537e7;    text-transform: capitalize;">{{msg_detail_obj.user}}</h3>
+<!--                        <h4>UI/UX</h4>-->
                     </div>
                 </div>
 
                 <div class="col-md-12" style="padding: 15px 15px;font-weight: 600;">
-                    <h3>Yoga is looking for a Angular Developer</h3>
-                    <h4>Here are some people in your contacts who has skills in Angular JS. You can sugest one of your expertee.</h4>
+                    <h3>{{msg_detail_obj.user}} is looking for a {{msg_detail_obj.message}}</h3>
+                    <h4>Here are some people in your contacts who has skills in {{msg_detail_obj.message}}. You can sugest one of your expertee.</h4>
                 </div>
             </div>
             
@@ -84,7 +93,7 @@
 
                         <!--                    <div class="row">-->
                         <div class="col-md-9" >
-                        <h4 style="color:#0152e9;font-size:1.5em; padding:5px 0px;">Sahaya Jeswin</h4>
+                        <h4 style="color:#0152e9;font-size:1.5em; padding:5px 0px;">{{peep.title.$t}}</h4>
                         </div>
                         <div class="col-md-3"><button class="btn btn-default" style="    background-image: url(UI-06.jpg);
     background-size: cover;
@@ -103,6 +112,8 @@
                 </div>
 
 
+            </div>
+            
             </div>
 
         </div>

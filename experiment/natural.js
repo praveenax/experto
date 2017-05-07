@@ -1,6 +1,6 @@
 var natural = require('natural'),
     tokenizer = new natural.WordTokenizer(),classifier = new natural.BayesClassifier();;
-console.log(tokenizer.tokenize("your dog has fleas."));
+//console.log(tokenizer.tokenize("your dog has fleas."));
 
 
 classifier.addDocument('i am long qqqq', 'buy');

@@ -44,9 +44,13 @@
                         <div class="user_email_list">
                             <div ng-repeat="user in user_list" class="panel panel-default contact_card row" ng-click="selectUser(user.gd$email[0].address)">
                                 <div class="col-md-3">
-                                    <div class="list_user_img"></div>
+                                    <div class="list_user_img">
+                                        
+                                        {{user.title.$t.split("")[0]}}
+                                        
+                                    </div>
                                 </div>
-                                <div class="col-md-7">
+                                <div class="col-md-7" style="text-transform:uppercase;">
                                     <!--                              <h4>{{user.gd$email[0].address}}</h4>-->
                                     <h4>{{user.title.$t}}</h4>
                                     <!--
@@ -76,12 +80,14 @@
             <div class="detail_panel panel panel-default" style="height:97vh;min-height: 375px;padding:20px;">
 
                 <div class="row">
+<!--
                     <div class="col-md-4">
                         <div style="width:100%;display:block;tex-align:center;background:#333; height:100px">
 
                         </div>
                     </div>
-                    <div class="col-md-8">
+-->
+                    <div class="col-md-12">
                         <h3>{{selected_user_obj.title.$t}}</h3>
                         <br>
                         <h4>{{selected_user_obj.gd$email[0].address}}</h4>
@@ -131,16 +137,18 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="suggestion_section  panel panel-default">
-                        <h3 class="dash_title">Similer Skilled Contacts</h3>
+                        <h3 class="dash_title">Similar Skilled Contacts</h3>
                         <div class="suggest_list">
 <!--                            <div class="suggested_users" ng-repeat="a in suggestion_obj.arr">test</div>                            -->
                             <div class="row suggested_users" ng-repeat="a in suggestion_obj.arr">
                              <div class="col-md-3">
-                                    <div class="list_user_img"></div>
+                                    <div class="list_user_img">
+                                        {{a.title.$t.split("")[0]}}
+                                    </div>
                                 </div>
                                 <div class="col-md-7">
                                     <!--                              <h4>{{user.gd$email[0].address}}</h4>-->
-                                    <h4 class="ng-binding">Akil</h4>
+                                    <h4 class="ng-binding">{{a.title.$t}}</h4>
                                  </div>
                                 <div class="col-md-1">
                                     <div class="text-center list_info_icon">
