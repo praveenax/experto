@@ -1,6 +1,24 @@
 var CMT = "";
 var total = 0;
+
+
+var USERNAME="";
+
+
 myApp.controller('cntrl', function ($scope, $http) {
+    
+    $scope.echoCount = 0;
+    
+    socket.on('newbeam', function(msg){
+      if(msg.user != USERNAME){
+          console.log(msg.message);
+          $scope.$apply(function(){
+            $scope.echoCount = $scope.echoCount+1;
+              
+          });
+      }
+    });
+    
     $scope.itemList = [
         {
             name: "Home",
@@ -27,10 +45,17 @@ myApp.controller('loginCntrl', function ($scope, $http) {
 
 });
 
-myApp.controller('dashCntrl', function ($scope, $http) {
+myApp.controller('dashCntrl', function ($scope, $http,$routeParams) {
     
     
+    $scope.username = $routeParams.username;
+    USERNAME = $scope.username;
     
+    console.log($scope.username);
+    
+    function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 //    $http({method: 'GET', url: 'www.google.com/m8/feeds/contacts/default/full', headers: {
 //        "GData-Version":"3.0"
@@ -68,7 +93,11 @@ myApp.controller('dashCntrl', function ($scope, $http) {
     });
     
     
-    $scope.skillArr = ["Manager","Sales","Mumbai","Designer"];
+   
+    
+    $scope.random_tags = ["Sales","Artist","Photoshop","Tally","Marketing","HR","Programming","Therapist","Physiotheraphy","Dancer","Decorator","Event Planner","Coaching"];
+//    $scope.skillArr = ["Manager","Sales","Mumbai","Designer"];
+    $scope.skillArr = [];
     
     
     $scope.selectUser = function(email){
@@ -86,6 +115,20 @@ myApp.controller('dashCntrl', function ($scope, $http) {
         }
         
         $scope.selected_user_obj = selected_user_obj;
+        
+        
+        $scope.skillArr = [];
+        $scope.random_tags = _.shuffle($scope.random_tags);
+        
+        for(var i=0;i<getRandomInt(1,3);i++){
+            
+            
+            $scope.skillArr.push($scope.random_tags[i]);
+            
+        }
+        
+        
+        
         
     }
     
@@ -114,9 +157,29 @@ myApp.controller('dashCntrl', function ($scope, $http) {
       }
     }
     
+    $scope.rating_obj = {};
+    $scope.suggestion_obj = {};
+    
     
     $scope.onSkillInfo = function(skill){
         
+        $scope.rating_obj.name = skill;
+        
+        $scope.rating_obj.val = 3.5;
+        
+        $scope.suggestion_obj.arr = [0,1,2,3];
+        
+    }
+    
+    
+    $scope.onBeam = function(){
+        
+        var data = {
+            user:$scope.username,
+            message:$scope.beaminput
+        }
+        socket.emit('chat message', data);
+      $scope.beaminput = "";
     }
     
 

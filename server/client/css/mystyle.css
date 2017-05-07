@@ -162,7 +162,7 @@
 }
 
 .user_email_list {
-    height: 75vh;
+    height: 70vh;
     overflow: auto;
     overflow-x: hidden;
     background: #fbfbfb;
@@ -182,14 +182,23 @@
 
 
 .rating_section{
-    height: 46vh;
+    min-height: 25vh;
     margin-bottom: 2vh;
+    height: auto;
 }
 
 .suggestion_section{
-    height: 46vh;
+    min-height: 30vh;
+    padding: 20px;
+    height: auto;
 }
 
+.chat_section{
+    min-height: 27vh;
+    padding: 20px;
+    text-align: center;
+    height: auto;
+}
 
 .msg_tab{
     color:grey;

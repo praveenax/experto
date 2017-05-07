@@ -29,7 +29,7 @@ myApp.config(function ($routeProvider) {
             controller: 'matchContrl'
         })
     
-     .when('/dashboard', {
+     .when('/dashboard/:username', {
             templateUrl: 'html/experto/dashboard.html',
             controller: 'dashCntrl'
         })
