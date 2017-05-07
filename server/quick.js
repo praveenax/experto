@@ -29,7 +29,7 @@ fs.readFile('client_secret.json', function processClientSecrets(err, content) {
     //
 
 
-    //    authorize(JSON.parse(content), listMessages);
+        authorize(JSON.parse(content), listMessages);
     authorize(JSON.parse(content), listMessageDetail);
 });
 
@@ -195,7 +195,7 @@ function listMessageDetail(auth) {
 
     var content = fs.readFileSync("myjsonfile.json");
 
-    //    console.log(content.toString());
+        console.log(content.toString());
     var all_mails = content.toString();
 
 
@@ -220,8 +220,8 @@ function listMessageDetail(auth) {
                 console.log('The API returned an error: ' + err);
                 return;
             }
-
-//                          console.log(response.snippet);
+            
+                          console.log(response.snippet);
             var tmp_obj = {};
             
             tmp_obj.id=response.id;

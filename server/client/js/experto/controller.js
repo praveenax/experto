@@ -98,7 +98,19 @@ myApp.controller('dashCntrl', function ($scope, $http,$routeParams) {
 //         $scope.user_list =  $scope.tmp_user_list;
          $scope.user_list = _.shuffle($scope.tmp_user_list);
         
+        $scope.skillArr = [];
+        $scope.random_tags = _.shuffle($scope.random_tags);
         
+        for(var i=0;i<getRandomInt(1,3);i++){
+            
+            
+            $scope.skillArr.push($scope.random_tags[i]);
+            
+        }
+        
+        $scope.user_list.skillArr = $scope.skillArr;
+        
+        $scope.skillArr = [];
         
     });
     

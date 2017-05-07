@@ -42,7 +42,8 @@
                 <div class="row ">
                     <div class="col-md-12" style="padding: 20px 25px;">
                         <div class="user_email_list">
-                            <div ng-repeat="user in user_list" class="panel panel-default contact_card row" ng-click="selectUser(user.gd$email[0].address)">
+                            <div ng-repeat="user in user_list|filter:search_contact_query.toUpperCase()" class="panel panel-default contact_card row" ng-click="selectUser(user.gd$email[0].address)">
+<!--                            <div ng-repeat="user in user_list" class="panel panel-default contact_card row" ng-click="selectUser(user.gd$email[0].address)">-->
                                 <div class="col-md-3">
                                     <div class="list_user_img">
                                         
@@ -60,6 +61,15 @@
                                   <li class="contact_item">Python</li>
                               </ul>
 -->
+                               <br>
+                               
+                               <div class="col-md-12">
+                                    <div class="skill_tag" ng-repeat="skill in user.skillArr" ng-click="onSkillInfo(skill)">
+
+                                        {{skill}}
+
+                                    </div>
+                               </div>
                                 </div>
                                 <div class="col-md-1">
                                     <div class="text-center list_info_icon">
@@ -126,7 +136,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="rating_section panel panel-default" style="text-align:center; padding:20px;">
-                        <h3 class="dash_title" style="margin-bottom:4px;">Rating</h3>
+                        <h3 class="dash_title" style="margin-bottom:4px;">Activity Rating</h3>
                         <span style="text-align: left;font-size: 14px; display: block;color:#bbb;">Based On Users Activity in the field.</span>
 
                         <h4 style="font-size:22px;">{{rating_obj.name}}</h4>
